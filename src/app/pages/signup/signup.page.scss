@@ -1,0 +1,33 @@
+.center {
+    margin: auto;
+  }
+  ion-input {
+    min-width: fit-content;
+    margin: auto;
+    margin-top: 1.3rem;
+    --background: primary;
+  }
+  ion-card {
+    margin: auto;
+    width: fit-content;
+  }
+  #logo {
+    width: 30%;
+    margin: auto;
+    }
+  .gradient-bg {
+    margin: auto;
+    color: #f5f5f5;
+  }
+  
+  #button {
+    margin: auto;
+    margin-top: 1rem;
+    min-width: fit-content;
+    max-width: 30%;
+    height: 3rem;
+  }
+  
+  a {
+    text-decoration: none;
+  }

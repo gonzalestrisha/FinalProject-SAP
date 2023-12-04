@@ -1,0 +1,95 @@
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Rules and Regulations</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+
+    <ion-button class= "seeMore" expand="block" (click)="setOpen(true)" >See More</ion-button>
+    <ion-content>
+      
+    </ion-content>
+
+      <ion-modal [isOpen]="isModalOpen">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Rules and Regulations</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="setOpen(false)">Close</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+
+          <ion-content class="ion-padding">
+            <h4>Rule No.1</h4>
+            <p>
+              Dormitories are shared living spaces, so it's important to be considerate of your neighbors.
+              Observe designated quiet hours, typically from 10 pm to 7 am, to minimize noise and allow others to rest or study.
+            </p>
+            <h4>Rule No.2</h4>
+            <p>
+              Keep your dorm room and common areas clean and tidy.
+              Dispose of trash properly, clean up after yourself, and avoid leaving personal belongings scattered around
+            </p>
+            <h4>Rule No.3</h4>
+            <p>
+              Maintain open communication with your roommates and dormitory staff. 
+              Address any concerns or issues directly and respectfully.
+            </p>
+            <h4>Rule No.4</h4>
+            <p>
+              Respect the personal property of your roommates and other residents.
+              Do not borrow items without permission and avoid entering someone else's room without their consent.
+            </p>
+            <h4>Rule No.5</h4>
+            <p>
+              Inform your resident director or dormitory management of any maintenance issues promptly. 
+            </p>
+            <h4>Rule No.6</h4>
+            <p>
+              Keep noise levels under control, especially during quiet hours. 
+            </p>
+            <h4>Rule No.7</h4>
+            <p>
+              Treat common areas like the kitchen, living room, and laundry room with respect.
+            </p>
+            <h4>Rule No.8</h4>
+            <p>
+              Familiarize yourself with fire safety procedures and follow all regulations.
+            </p>
+            <h4>Rule No.9</h4>
+            <p>
+              Dormitories typically have strict policies regarding alcohol and drug use.
+            </p>
+            <h4>Rule No.10</h4>
+            <p>
+              Inform your roommates and resident director if you plan to have guests over.
+            </p>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
+  </ion-card>
+
+
+  <!-- maintenance request -->
+  <div class="maintenanceReq">
+    <ion-button [routerLink]="('/maintenance')" class="maintenanceButton">
+    <ion-icon name="construct"></ion-icon>
+    <div class="maintenanceTitle">Maintenance Request</div>
+  </ion-button> 
+  </div>
+
+  <!-- complaint -->
+  <div class="complaint">
+    <ion-button [routerLink]="('/complaint')" class="complaintButton">
+    <ion-icon slot="start" name="alert-circle"></ion-icon>
+    <div class="complaintTitle">Complaint</div>
+  </ion-button> 
+  </div>
+
+</ion-content>

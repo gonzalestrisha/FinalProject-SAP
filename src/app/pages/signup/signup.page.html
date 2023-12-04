@@ -1,0 +1,124 @@
+<ion-content [fullscreen]="true">
+  <div class="flex-center">
+    <ion-card class="card">
+      <ion-item lines="none">
+				<img id="logo" src="/assets/placeholder-image.png" alt="SAP logo">
+			</ion-item>
+      <ion-card-header>
+				<ion-card-title color="primary" class="title">CREATE AN ACCOUNT</ion-card-title>
+			</ion-card-header>
+
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-input  
+          label="First name"
+          label-placement="floating" 
+          fill="outline"
+          placeholder="Enter first name" 
+          color="primary" 
+          [clearInput]="true" 
+          required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-input 
+          label="Last name" 
+          label-placement="floating" 
+          fill="outline" 
+          placeholder="Enter last name" 
+          color="primary" 
+          [clearInput]="true"
+          required>
+          </ion-input>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-input 
+          label="Email"
+          label-placement="floating" 
+          fill="outline" 
+          placeholder="Enter email" 
+          color="primary" 
+          type="email"
+          helperText="Enter a valid email"
+          errorText="Invalid email" 
+          successText="Valid email."
+          [clearInput]="true" 
+          ngModel
+          email
+          required>
+          </ion-input>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-input 
+          label="Mobile number" 
+          label-placement="floating" 
+          fill="outline" 
+          color="primary" 
+          type="tel"
+          placeholder="Enter mobile number" 
+
+          [clearInput]="true" 
+          required>
+          </ion-input>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-input 
+          label="Username" 
+          label-placement="floating" 
+          fill="outline" 
+          placeholder="Enter username" 
+          color="primary" 
+          [clearInput]="true" 
+          required>
+          </ion-input>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-input 
+          label="Password"
+          label-placement="floating" 
+          fill="outline" 
+          placeholder="Enter Password" 
+          color="primary" 
+          type="password" 
+          [clearInput]="true" 
+          required>
+          </ion-input>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-input 
+          label="Confirm Password" 
+          label-placement="floating" 
+          fill="outline" 
+          placeholder="Enter Password" 
+          color="primary" 
+          type="password" 
+          [clearInput]="true" 
+          required>
+          </ion-input>
+        </ion-item>
+        
+        <ion-button shape="round" fill="solid" size="full" id="button">
+          Sign Up
+        </ion-button>
+      </ion-card-content>
+
+      <ion-item lines="none">
+        <ion-text>
+          I already have an account. 
+        </ion-text>
+        <a href="login">Login</a>
+      </ion-item>
+
+
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

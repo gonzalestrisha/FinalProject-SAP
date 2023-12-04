@@ -1,0 +1,35 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>    
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+      <ion-title>Complaint</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item lines="none">
+      <ion-select label="Complaint" placeholder="Faucet">
+        <ion-select-option value="noise">Excessive Noise</ion-select-option>
+        <ion-select-option value="security">Security Concerns</ion-select-option>
+        <ion-select-option value="pet">Pet-Related Issues</ion-select-option>
+        <ion-select-option value="misled">Misrepresentation</ion-select-option>
+        <ion-select-option value="Other">Other</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-input
+  aria-label="Custom input"
+  placeholder="Type Something..."
+  class="custom">
+</ion-input>
+
+  <div class="submit">
+    <ion-button>Submit</ion-button> 
+  </div>
+
+</ion-content>

@@ -24,3 +24,60 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-input.custom.ios .input-bottom .helper-text,
+ion-input.custom.ios .input-bottom .counter,
+ion-input.custom.md .input-bottom .helper-text,
+ion-input.custom.md .input-bottom .counter {
+  color: var(--ion-color-primary);
+}
+
+
+$font-family_1: 'Poppins', sans-serif;
+.title {
+	font-family: $font-family_1;
+  font-size: 1.8rem;
+  line-height: normal;
+  text-align: center;
+  font-style: bold;
+  font-weight: 800;
+  
+}
+ion-label {
+  font-family: $font-family_1;
+}
+ion-input {
+  font-family: $font-family_1;
+}
+// ion-button {
+//   font-family: $font-family_1;
+// }
+ion-card-title {
+  font-family: $font-family_1;
+}
+
+ion-app {
+  background-color: #F9FAFB;
+}
+
+ion-content{
+  --keyboard-offset: 0 !important;
+  --offset-bottom: 0 !important;
+}
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}
+
+.forest-ext-shadow-host {
+  display: none;
+}
+
+#shadow-root {
+  display: none;
+}
