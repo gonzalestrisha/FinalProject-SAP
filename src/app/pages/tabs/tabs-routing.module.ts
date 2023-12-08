@@ -20,8 +20,8 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
       },
       {
-        path: 'payment',
-        loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
+        path: 'request',
+        loadChildren: () => import('./request/request.module').then( m => m.RequestPageModule)
       },
       {
         path: 'transactions',
@@ -30,11 +30,13 @@ const routes: Routes = [
       {
         path: 'account',
         loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
-      }
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+      },
     ] 
-  },
-  
-  
+  }
 ];
 
 @NgModule({

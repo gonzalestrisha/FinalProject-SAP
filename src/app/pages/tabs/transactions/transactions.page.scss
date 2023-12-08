@@ -1,28 +1,39 @@
-
 .header {
+  display: flex;
+  justify-content: center;
+  margin-top: 65px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #891E89;
+
+}
+.cards {
+  margin-top: 50px;
+  margin-bottom: 10%;
+  position: relative;
+}
+
+ion-card {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  height: 150px;
+}
+
+
+@media (min-width: 968px) {
+  .header {
     display: flex;
     justify-content: center;
     margin-top: 65px;
-    font-size: 25px;
+    font-size: 40px;
     font-weight: bold;
     color: #891E89;
-  
   }
-  .cards {
-  
-    margin-top: 50px;
-    margin-bottom: 10%;
-    position: relative;
-  }
-  
   ion-card {
-    background-color: #F9FAFB;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 40px;
     height: 150px;
-    position: relative;
   }
-  
-  
-  
+}
