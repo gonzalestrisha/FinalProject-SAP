@@ -1,13 +1,45 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>topay</ion-title>
+  <ion-toolbar>    
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">topay</ion-title>
-    </ion-toolbar>
-  </ion-header>
+	<ion-text class="header">PAYMENT</ion-text>
+
+  <h5>Unit</h5>
+  <ion-item> 
+    <ion-select label="    " placeholder="Unit">
+      <ion-select-option value="unit1">unit 1</ion-select-option>
+      <ion-select-option value="unit2">unit 2</ion-select-option>
+      <ion-select-option value="unit3">unit 3</ion-select-option>
+      <ion-select-option value="unit4">unit 4</ion-select-option>
+      <ion-select-option value="unit5">unit 5</ion-select-option>
+      <ion-select-option value="unit6">unit 6</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <h5>To pay</h5>
+  <ion-item> 
+    <ion-select label="    " placeholder="Bill">
+      <ion-select-option value="rent">Rent Bill</ion-select-option>
+      <ion-select-option value="water">Water Bill</ion-select-option>
+      <ion-select-option value="electric">Electric Bill</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <h5>Payment Amount</h5>
+  <input type="number" class="rounded-input ">
+  <br/>
+
+  <h5>Amount Date</h5>
+  <input type="date" class="rounded-input ">
+  <br/>
+
+  <div class="submit">
+  <ion-button>Submit</ion-button> 
+</div>
+  
 </ion-content>

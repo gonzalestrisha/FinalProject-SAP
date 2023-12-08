@@ -33,6 +33,11 @@ const routes: Routes = [
     path: 'maintenance',
     loadChildren: () => import('./pages/tabs/home/maintenance/maintenance.module').then( m => m.MaintenancePageModule)
   },
+  {
+    path: 'topay',
+    loadChildren: () => import('./pages/tabs/home/topay/topay.module').then(m => m.TopayPageModule)
+  }
+  
 
 
 
