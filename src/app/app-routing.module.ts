@@ -34,10 +34,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tabs/home/maintenance/maintenance.module').then( m => m.MaintenancePageModule)
   },
 
-  {
-    path: 'complaint',
-    loadChildren: () => import('./pages/tabs/home/complaint/complaint.module').then( m => m.ComplaintPageModule)
-  },
 
 
 ];
