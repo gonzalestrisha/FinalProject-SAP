@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>    
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
     </ion-buttons>
@@ -7,11 +7,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-	<ion-text class="header">PAYMENT</ion-text>
+  <ion-text class="header">PAYMENT</ion-text>
 
   <h5>Unit</h5>
-  <ion-item> 
-    <ion-select label="    " placeholder="Unit">
+  <form class="add" action="" id="payment">
+
+    <ion-select label="    "  name="unit" id="unit" placeholder="Unit">
       <ion-select-option value="unit1">unit 1</ion-select-option>
       <ion-select-option value="unit2">unit 2</ion-select-option>
       <ion-select-option value="unit3">unit 3</ion-select-option>
@@ -19,27 +20,29 @@
       <ion-select-option value="unit5">unit 5</ion-select-option>
       <ion-select-option value="unit6">unit 6</ion-select-option>
     </ion-select>
-  </ion-item>
 
   <h5>To pay</h5>
-  <ion-item> 
-    <ion-select label="    " placeholder="Bill">
+
+    <ion-select label="    " name="bill" id="bill" placeholder="Bill">
       <ion-select-option value="rent">Rent Bill</ion-select-option>
       <ion-select-option value="water">Water Bill</ion-select-option>
       <ion-select-option value="electric">Electric Bill</ion-select-option>
     </ion-select>
-  </ion-item>
 
   <h5>Payment Amount</h5>
-  <input type="number" class="rounded-input ">
+  <input type="number" name="number"   id="amount" class="rounded-input">
   <br/>
 
   <h5>Amount Date</h5>
-  <input type="date" class="rounded-input ">
+  <input type="date"  name="date"  id="date" class="rounded-input">
   <br/>
 
-  <div class="submit">
-  <ion-button>Submit</ion-button> 
-</div>
-  
+  <div class="submit"  name="submit" id="submit">
+    <ion-button onclick="submitForm()">Submit</ion-button>
+  </div>
+</form>
+
+
+
 </ion-content>
+<script src="index.js"></script>
