@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage{
   isModalOpen = false;
 
   setOpen(isOpen: boolean) {
@@ -14,7 +14,5 @@ export class HomePage implements OnInit {
   
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }
