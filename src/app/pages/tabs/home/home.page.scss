@@ -15,6 +15,8 @@ ion-card {
   
   ion-card-content {
     font-size: 14px;
+    height: 50px; 
+    overflow-y: auto; 
   }
   
   ion-button {
@@ -22,9 +24,17 @@ ion-card {
   }
   ion-content {
     overflow-y: scroll;
+
   }
+
+ .seeMore {
+  width: 50%; 
+  margin: 0 auto;
+  margin-bottom: 50px; 
+  display: block; 
+}
   
-  /* Media query for smaller screens (tablet size) */
+  /* tablet size */
   @media (max-width: 768px) {
     ion-card {
       width: 95%;
@@ -50,7 +60,7 @@ ion-card {
     }
   }
   
-  /* Media query for even smaller screens (mobile size) */
+  /* mobile size */
   @media (max-width: 576px) {
     ion-card {
       width: 100%;
