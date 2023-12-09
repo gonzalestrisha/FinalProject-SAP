@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request.page.scss'],
 })
 export class RequestPage implements OnInit {
+  ngOnInit() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

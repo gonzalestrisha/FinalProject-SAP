@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "project-sap-3ec10": {
+      "hosting": {
+        "app": [
+          "project-sap-3ec10"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "project-sap-3ec10"
+  }
+}

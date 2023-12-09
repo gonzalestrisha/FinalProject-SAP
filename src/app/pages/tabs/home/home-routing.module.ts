@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'topay',
     loadChildren: () => import('./topay/topay.module').then( m => m.TopayPageModule)
   },
+  {
+    path: 'maintenance',
+    loadChildren: () => import('./maintenance/maintenance.module').then( m => m.MaintenancePageModule)
+  },
 
 
 ];
