@@ -11,10 +11,15 @@
     margin: auto;
     width: fit-content;
   }
+  ion-card-title {
+    font-size: 1.6rem;
+  }
+
   #logo {
-    width: 30%;
+    width: 50%;
     margin: auto;
-    }
+    margin-bottom: -2.5rem;
+  }
   .gradient-bg {
     margin: auto;
     color: #f5f5f5;
