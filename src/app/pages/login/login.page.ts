@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 // import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -20,7 +21,11 @@ export class LoginPage {
 
   // validationFormUser!: FormGroup;
 
-  constructor() { }
+  constructor(private dataService: DataService) { 
+    this.dataService.getMaintenanceReq().subscribe(res => {
+      console.log(res)
+    })
+  }
 
   // ngOnInit() {
   //   this.validationFormUser = this.formbuilder.group({
