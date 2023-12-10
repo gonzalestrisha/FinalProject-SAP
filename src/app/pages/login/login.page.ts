@@ -22,7 +22,7 @@ export class LoginPage {
   // validationFormUser!: FormGroup;
 
   constructor(private dataService: DataService) { 
-    this.dataService.getMaintenanceReq().subscribe(res => {
+    this.dataService.getMaintenanceReqs().subscribe(res => {
       console.log(res)
     })
   }
