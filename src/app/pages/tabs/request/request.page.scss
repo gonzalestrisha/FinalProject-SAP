@@ -1,3 +1,8 @@
+ion-content {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -17,8 +22,8 @@ ion-card {
   margin-right: 30px;
   margin-bottom: 15px;
   height: 150px;
-
 }
+
 
 .request__btns {
   float: right;
@@ -28,9 +33,6 @@ ion-card {
   opacity: 0.5;
 }
 
-ion-content {
-  scroll-behavior: smooth;
-}
 
 
 @media (min-width: 968px) {

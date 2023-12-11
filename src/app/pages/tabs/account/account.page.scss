@@ -1,101 +1,107 @@
-ion-content{
-  overflow-y: scroll;
-}
-
 .title {
     display: flex;
     justify-content: center;
     margin-top: 4rem;
     margin-bottom: 2rem;
   }
-  .ln {
-    margin: auto;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    background: none;
-  }
-  .avatar {
-    margin: auto;
-    margin-top: 1rem;
-    margin-bottom: 0.7rem;
-    display: flex;
-  
-    width: 5rem;
-    border-radius: 100%;
-    // border: 0.1rem solid rgb(2, 2, 2);
-    // box-shadow: 0 0 1rem rgb(255, 255, 255);
-  }
-  .name {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #891E89;
-    text-decoration: none;
-  
-  }
-  
-  .section {
-    margin-top: 4rem;
-    margin-bottom: 50%;
-    position: relative;
-    margin: auto;
-    background: none;
-    border-radius: 1.5rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-    width: 90%;
-    overflow:visible;
-  
-  }
-  
-  ion-content {
-      min-width: 100%;
-      min-height: auto;
-      max-height: fit-content;
-      background-image: url(../../../../assets/img/bg/Vectoraccount.svg);
-      background-size: cover;
-  }
-  
-  ion-button {
-    margin: auto;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    width: 25%;
-    height: 2.75rem;
-    margin-top: 4rem;
-  
-  }
-  ion-card {
-      max-width: 100%;
-      margin: auto;
-      position: relative;
-    border-radius: 0;
-  
-      box-shadow: none;
-  }
+.ln {
+  margin: auto;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: none;
+}
+.avatar {
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 0.7rem;
+  display: flex;
 
-  ion-card-title {
-      font-size: 1rem;
-      float: left;
-      max-width: 50%;
-  }
-  .ion-text-right {
-    display: inline-block;
-  }
-  #name {
-    border-radius: 1rem 1rem 0 0;
-  }
-  #number {
-    border-radius: 0 0 1rem 1rem;
+  width: 5rem;
+  border-radius: 100%;
+  border: 0.1rem solid rgb(2, 2, 2);
+  // box-shadow: 0 0 1rem rgb(255, 255, 255);
+}
+.name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #891E89;
+  text-decoration: none;
+
+}
+
+.section {
+  margin-top: 4rem;
+  margin-bottom: 50%;
+  position: relative;
+  margin: auto;
+  background: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  width: 90%;
+  overflow:hidden;
+
+}
+
+ion-content {
+    min-width: 50%;
+    min-height: auto;
+    max-height: fit-content;
+    background-image: url(../../../../assets/img/bg/Vectoraccount.svg);
+    background-size: cover;
+    overflow-y: scroll;
+}
+
+ion-card-header {
+  width: 100%;
+}
+
+ion-button {
+  margin: auto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  width: 7.25rem;
+  height: 2.75rem;
+  margin-top: 4rem;
+  border-radius: 10%;
+:hover {
+  color: contrast;
+  background-color: contrast;
+}
+}
+ion-card {
+  max-width: 100%;
+  margin: auto;
+  // position: relative;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+ion-card-title {
+  font-size: 1rem;
+  width: 50%;
+  display: inline-block;
+}
+.ion-text-right {
+  display: inline-block;
+  width: 50%;
+
+}
+#name {
+  border-radius: 1rem 1rem 0 0;
+}
+#number {
+  border-radius: 0 0 1rem 1rem;
+
+}
+
+.card-content-ios {
+    padding: 0;
+    font-size: 0.7rem;
+    line-height: 1;
+}
   
-  }
-  
-  .card-content-ios {
-      padding: 0;
-      font-size: 0.7rem;
-      line-height: 1;
-  }
-  
-  @media only screen and (min-width: 568px) {
+  @media only screen and (min-width: 968px) {
     .title {
       margin-top: 6rem;
     }
