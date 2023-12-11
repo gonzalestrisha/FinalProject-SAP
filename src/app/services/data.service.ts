@@ -28,17 +28,14 @@ export interface payments {
   rentAmountPerUnit: number;
 }
 
-/*meron na to */
+
 export interface Transaction {
   id?: string;
   unitNumber: number;
   billType: 'water' | 'rent' | 'current';
-  paidMonth: string;
   paymentAmount: number;
   paymentDate: string;
 }
-
-
 
 
 @Injectable({
@@ -81,24 +78,27 @@ export class DataService {
     );
   }
 
+
+
   getTransactions(): Observable<Transaction[]> {
     const transactionsRef = collection(this.firestore, 'transactions');
     return collectionData(transactionsRef, { idField: 'id' }) as Observable<Transaction[]>;
   }
 
   getTransactionById(id: string): Observable<Transaction> {
-    const transactionRef = doc(this.firestore, `transactions/${id}`);
-    return docData(transactionRef, { idField: 'id' }) as Observable<Transaction>;
+    const transactionsRef = doc(this.firestore, `transactions/${id}`);
+    return docData(transactionsRef, { idField: 'id' }) as Observable<Transaction>;
   }
 
-  addTransaction(transaction: Transaction) {
+  addTransaction(transactions: Transaction) {
     const transactionsRef = collection(this.firestore, 'transactions');
-    return addDoc(transactionsRef, transaction);
+    return addDoc(transactionsRef, transactions);
   }
 
-  deleteTransaction(transaction: Transaction) {
-    const transactionRef = doc(this.firestore, `transactions/${transaction.id}`);
-    return deleteDoc(transactionRef);
+  deleteTransaction(transactions: Transaction) {
+    const transactionsRef = doc(this.firestore, `transactions/${transactions.id}`);
+    return deleteDoc(transactionsRef);
   }
+
 }
 
