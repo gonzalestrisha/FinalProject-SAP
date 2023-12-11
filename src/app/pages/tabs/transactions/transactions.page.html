@@ -1,68 +1,31 @@
-<script> src="main.js"</script>
+
 <ion-content>
   <ion-text class="header">TRANSACTIONS</ion-text>
 
 
-  <div class="cards">
-   <ion-card>
-     <ion-card-header>
 
-     </ion-card-header>
-   </ion-card>
+<div class="cards"  *ngFor="let trans of transactions">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ trans.billType }}</ion-card-title>
+      <ion-card-subtitle> Unit Number: {{ trans.unitNumber }} </ion-card-subtitle>
+      
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-label>Payment Amount: </ion-label>  {{ trans.paymentAmount }} <br>
 
+        <ion-label>Payment Date: {{trans.paymentDate}}
+      </ion-label>
 
-   <ion-card>
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-
-
-
- </div>
+  <div class="transaction__btns">
+        <ion-button fill="clear" (click)="deleteTransaction(trans)">Delete</ion-button>
+      </div>
  
 
- </ion-content>
+    </ion-card-content>
+  </ion-card>
+</div>
 
+
+</ion-content>
