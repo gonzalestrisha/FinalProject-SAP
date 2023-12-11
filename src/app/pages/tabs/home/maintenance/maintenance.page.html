@@ -8,8 +8,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form>
+<ion-content [fullscreen]="true">
+  <section>
     <h5>Unit</h5>
 
     <ion-select label="Select Unit" placeholder="Unit" [(ngModel)]="unitNumber">
@@ -37,6 +37,7 @@
     <div class="submit">
       <ion-button (click)="addRequest()" [disabled]="!(unitNumber && type && message)">Submit</ion-button>
     </div>
-  </form>
+  </section>
+
 
 </ion-content>

@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 65px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #891E89;
+}
+
+ion-card-header {
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding-bottom: 0.2rem;
+}
+ion-label {
+  font-size: 1rem;
+  padding: 5px 16px;
+  margin-left: 1.5rem;
+}
+.text-income {
+  display: inline-block;
+  width: 50%;
+}
+
+.pie {
+  --w:130px;
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+  // display: inline-block;
+  place-content: center;
+  margin-top: 1.7rem;
+  margin-right: 1.3rem;
+  margin-bottom: 1.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  float: right;
+}
+.pie:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+          mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+
+.card-title {
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+.number {
+  display: inline-block;
+  text-align: right;
+  font-size: 2rem;
+  width: 50%;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  color: #891E89;
+}
+
+.card-pending {
+}
+

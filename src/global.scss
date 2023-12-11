@@ -34,7 +34,7 @@ ion-input.custom.md .input-bottom .counter {
 
 
 $font-family_1: 'Poppins', sans-serif;
-.title {
+.title, .header {
 	font-family: $font-family_1;
   font-size: 1.8rem;
   line-height: normal;
@@ -43,18 +43,10 @@ $font-family_1: 'Poppins', sans-serif;
   font-weight: 800;
   
 }
-ion-label {
+ion-label, ion-input, ion-card-title, ion-card-header {
   font-family: $font-family_1;
 }
-ion-input {
-  font-family: $font-family_1;
-}
-// ion-button {
-//   font-family: $font-family_1;
-// }
-ion-card-title {
-  font-family: $font-family_1;
-}
+
 
 ion-app {
   background-color: #F9FAFB;
