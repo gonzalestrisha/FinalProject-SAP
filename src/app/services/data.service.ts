@@ -2,19 +2,26 @@ import { Injectable } from '@angular/core';
 import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, docData, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
+
+
+/*meron na to */
 export interface MaintenanceReq {
   id?: string;
   unitNumber: number;
-  dateOfRequest: string;
   type: string;
+  message: string;
+  dateOfRequest: string;
   pending: boolean;
+  
 }
+
 
 export interface units {
   id?: string;
   totalTenants: number;
   occupied: boolean;
 }
+
 
 export interface payments {
   id?: string;
@@ -23,14 +30,21 @@ export interface payments {
   rentAmountPerUnit: number;
 }
 
-export interface transactions {
+
+
+
+/*meron na to */
+export interface Transaction {
   id?: string;
-  unit: number;
-  type: string;
+  unitNumber: number;
+  billType: 'water' | 'rent' | 'current';
   paidMonth: string;
-  amount: number;
-  dateOfPayment: string;
+  paymentAmount: number;
+  paymentDate: string;
 }
+
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -66,8 +80,37 @@ export class DataService {
         unitNumber: maintenanceReq.unitNumber,
         dateOfRequest: maintenanceReq.dateOfRequest,
         type: maintenanceReq.type,
+        message: maintenanceReq.message,
         pending: maintenanceReq.pending
       }
     );
   }
+
+
+
+
+
+
+  getTransactions(): Observable<Transaction[]> {
+    const transactionsRef = collection(this.firestore, 'transactions');
+    return collectionData(transactionsRef, { idField: 'id' }) as Observable<Transaction[]>;
+  }
+
+  getTransactionById(id: string): Observable<Transaction> {
+    const transactionRef = doc(this.firestore, `transactions/${id}`);
+    return docData(transactionRef, { idField: 'id' }) as Observable<Transaction>;
+  }
+
+  addTransaction(transaction: Transaction) {
+    const transactionsRef = collection(this.firestore, 'transactions');
+    return addDoc(transactionsRef, transaction);
+  }
+
+  deleteTransaction(transaction: Transaction) {
+    const transactionRef = doc(this.firestore, `transactions/${transaction.id}`);
+    return deleteDoc(transactionRef);
+  }
+
+
 }
+

@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
     provideFirebaseApp(() => initializeApp({
       apiKey: "AIzaSyCtcBsWwWZjhI2bd9_ywJ62XGz2ZtNQpj0",
       authDomain: "project-sap-3ec10.firebaseapp.com",
@@ -22,7 +23,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     })),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide:RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

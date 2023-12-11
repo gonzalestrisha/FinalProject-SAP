@@ -3,14 +3,13 @@
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
     </ion-buttons>
+      <ion-title>Payment</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-text class="header">PAYMENT</ion-text>
-
+<ion-content>
+  <form>
   <h5>Unit</h5>
-  <form class="add" action="" id="payment">
 
     <ion-select label="Select unit"  name="unit" id="unit" placeholder="Unit">
       <ion-select-option value="unit1">unit 1</ion-select-option>
@@ -23,11 +22,12 @@
 
   <h5>To pay</h5>
 
-    <ion-select label="Select bill" name="bill" id="bill" placeholder="Bill">
+      <ion-select label="Select bill" name="bill" id="bill" placeholder="Bill">
       <ion-select-option value="rent">Rent Bill</ion-select-option>
       <ion-select-option value="water">Water Bill</ion-select-option>
       <ion-select-option value="electric">Electric Bill</ion-select-option>
     </ion-select>
+
 
   <h5>Payment Amount</h5>
   <input type="number" name="number"   id="amount" class="rounded-input">
@@ -40,9 +40,8 @@
   <div class="submit"  name="submit" id="submit">
     <ion-button onclick="submitForm()">Submit</ion-button>
   </div>
+
 </form>
 
 
-
 </ion-content>
-<script src="index.js"></script>

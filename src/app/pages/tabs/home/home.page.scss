@@ -1,71 +1,89 @@
+ion-content{
+  overflow-y: auto;
+ }
+
 ion-card {
-    width: 90%;
-    max-width: 500px;
-    margin: 30px auto;
+    max-width: 700px;
+    margin:  30px auto;
+    margin-top: 70px;
+    margin-bottom: 50px;
   
   }
   
   ion-card-title {
-    font-size: 20px;
+    font-size: 30px;
   }
   
   ion-card-subtitle {
-    font-size: 16px;
+    font-size: 18px;
   }
   
   ion-card-content {
-    font-size: 14px;
+    font-size: 16px;
     height: 50px; 
-    overflow-y: auto; 
   }
   
-  ion-button {
-    font-size: 14px;
-  }
-  ion-content {
-    overflow-y: scroll;
-
-  }
-
- .seeMore {
-  width: 50%; 
+.seeMore {  
+  width: 30%;
+  font-size: 15px;
   margin: 0 auto;
-  margin-bottom: 50px; 
-  display: block; 
+  margin-bottom: 50px;
+  display: block;
+  --background: #cfa4c1;
+  color: black;
 }
-  
-  /* tablet size */
-  @media (max-width: 768px) {
-    ion-card {
-      width: 95%;
-    }
-  
-    ion-card-title {
-      font-size: 18px;
-    }
-  
-    ion-card-subtitle {
-      font-size: 14px;
-    }
-  
-    ion-card-content {
-      font-size: 12px;
-    }
-  
-    ion-button {
-      font-size: 12px;
-    }
-    .maintenanceReq, .topay{
-      width: 95%;
-    }
+
+.rules{
+  overflow-y: scroll;
+}
+
+  .maintenanceReq, .topay {
+    max-width: 700px;
+    margin: 30px auto;
+    margin-bottom: 50px;
+    height: 200px;
+    --border-radius: 5px;
   }
   
-  /* mobile size */
+
+  .topayButton, .maintenanceButton {
+    width: 100%;
+    height: 200px;
+    --border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: black;
+    --background: #F0edFF;
+  }
+  
+  .maintenanceTitle, .topayTitle{
+    margin-top: 70px;
+    font-size: 20px;
+  }
+  
+  .topayButton ion-icon,
+  .maintenanceButton ion-icon {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    color: #600060;
+  
+  }
+
+
+
   @media (max-width: 576px) {
     ion-card {
-      width: 100%;
+      width: 90%;
+      margin: 15px auto;
     }
-  
+
+
     ion-card-title {
       font-size: 16px;
     }
@@ -77,52 +95,39 @@ ion-card {
     ion-card-content {
       font-size: 10px;
     }
-  
-    ion-button {
+
+    .seeMore {  
       font-size: 10px;
+      width: 35%;
     }
+
+
     .maintenanceReq, .topay{
-      width: 100%;
+      width: 90%;
+      margin: 15px auto;
+      height: 50%;
     }
+
+    .topayButton, .maintenanceButton {
+      margin: 15px auto;
+      height: 150px;
+
+    }
+
+
+    .maintenanceTitle, .topayTitle{
+      margin-top: 50px;
+      font-size: 15px;
+    }
+    
+    .topayButton ion-icon,
+    .maintenanceButton ion-icon {
+      position: absolute;
+      top: 55px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      color: #600060;
   }
-  
-  .maintenanceReq, .topay {
-    width: 90%;
-    max-width: 500px;
-    margin: 30px auto;
-    --background: #F0edFF;
-  }
-  
-  ion-button {
-    width: 100%;
-    --background: #cfa4c1;
-    color: black;
-    font-size: 14px;
-  }
-  
-  .topayButton, .maintenanceButton {
-    width: 100%;
-    --background: #F0edFF;
-    height: 150px;
-    font-size: 14px;
-    --border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  .maintenanceTitle, .topayTitle{
-    margin-top: 70px;
-  }
-  
-  .topayButton ion-icon,
-  .maintenanceButton ion-icon {
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    color: #891E89;
-  
   }

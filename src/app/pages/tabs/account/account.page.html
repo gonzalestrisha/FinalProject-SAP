@@ -1,50 +1,58 @@
-<ion-content>
-	<ion-text class="header"></ion-text>
+<ion-content [fullscreen]="true">
+  <ion-text class="title" color="primary"></ion-text>
+
   <div class="ln">
-    <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg">
-    <ion-text class="name">username</ion-text>
+    <img class="avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="demo-avatar">
+
+    <ion-text class="name" color="none" lines="none">username</ion-text>
   </div>
 
-	<ion-card>
-  <ion-card-header>
-    <ion-card-title>Name</ion-card-title>
-    <ion-card-content class="">Larry Davis</ion-card-content>
-  </ion-card-header>
-</ion-card>
+<div class="section">
+  <ion-card id="name">
+    <ion-card-header>
+      <ion-card-title >Name</ion-card-title>
+      <ion-card-content class="ion-text-right">
+        John Doe
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
 
-<ion-card>
-  <ion-card-header>
-    <ion-card-title>Email</ion-card-title>
-    <ion-card-content class="">
-    </ion-card-content>
-  </ion-card-header>
-</ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Email</ion-card-title>
+      <ion-card-content class="ion-text-right">
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
 
-<ion-card>
-  <ion-card-header>
-    <ion-card-title>Gender</ion-card-title>
-    <ion-card-content class="">
-    </ion-card-content>
-  </ion-card-header>
-</ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Gender</ion-card-title>
+      <ion-card-content class="ion-text-right">
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
 
-<ion-card>
-  <ion-card-header>
-    <ion-card-title>Birthday</ion-card-title>
-    <ion-card-content class="">
-    </ion-card-content>
-  </ion-card-header>
-</ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Birthday</ion-card-title>
+      <ion-card-content class="ion-text-right">
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
 
-<ion-card>
-  <ion-card-header>
-    <ion-card-title>Phone number</ion-card-title>
-    <ion-card-content class="">
-    </ion-card-content>
-  </ion-card-header>
-</ion-card>
+  <ion-card  id="number">
+    <ion-card-header>
+      <ion-card-title>Phone number</ion-card-title>
+      <ion-card-content class="ion-text-right">
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+</div>
 
-<ion-button fill="outline" expand="block" type="submit">
-  Log Out</ion-button>
+  <ion-button fill="outline" shape="round" size="full">
+    <ion-icon name="exit-outline" color="white" slot="start"></ion-icon>
+    Log Out</ion-button>
+
 
 </ion-content>

@@ -9,9 +9,7 @@
     </ion-card-content>
 
     <ion-button class= "seeMore" expand="block" (click)="setOpen(true)" >See More</ion-button>
-    <ion-content>
       
-    </ion-content>
 
       <ion-modal [isOpen]="isModalOpen">
         <ng-template>
@@ -24,7 +22,7 @@
             </ion-toolbar>
           </ion-header>
 
-          <ion-content class="ion-padding">
+          <div class="rules">
             <h4>Rule No.1</h4>
             <p>
               Dormitories are shared living spaces, so it's important to be considerate of your neighbors.
@@ -69,7 +67,7 @@
             <p>
               Inform your roommates and resident director if you plan to have guests over.
             </p>
-          </ion-content>
+          </div>
         </ng-template>
       </ion-modal>
 
@@ -88,8 +86,9 @@
   <div class="topay">
     <ion-button [routerLink]="('/topay')" class="topayButton">
     <ion-icon slot="start" name="alert-circle"></ion-icon>
-    <div class="topayTitle">ToPay</div>
+    <div class="topayTitle">To Pay</div>
   </ion-button> 
   </div>
 
 </ion-content>
+

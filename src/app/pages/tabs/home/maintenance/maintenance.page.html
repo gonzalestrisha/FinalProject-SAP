@@ -1,32 +1,42 @@
-
 <ion-header [translucent]="true">
-  <ion-toolbar>    
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
     </ion-buttons>
+
+    <ion-title>Maintenance Request</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-label class="maintenanceRequest__title">Maintenance Request</ion-label>
+<ion-content>
+  <form>
+    <h5>Unit</h5>
 
-  <section class="maintenanceRequest__selectSection">
-    <ion-select class="maintenanceRequest__selectfield" toggleIcon="chevron-down" label-placement="floating" label="Unit">
-      <ion-select-option value="1">1</ion-select-option>
-      <ion-select-option value="2">2</ion-select-option>
-      <ion-select-option value="3">3</ion-select-option>
-      <ion-select-option value="4">4</ion-select-option>
-      <ion-select-option value="5">5</ion-select-option>
+    <ion-select label="Select unit" placeholder="Unit">
+      <ion-select-option value="unit1">unit 1</ion-select-option>
+      <ion-select-option value="unit2">unit 2</ion-select-option>
+      <ion-select-option value="unit3">unit 3</ion-select-option>
+      <ion-select-option value="unit4">unit 4</ion-select-option>
+      <ion-select-option value="unit5">unit 5</ion-select-option>
+      <ion-select-option value="unit6">unit 6</ion-select-option>
     </ion-select>
-  
-    <ion-select class="maintenanceRequest__selectfield" toggleIcon="chevron-down" label-placement="floating" label="Type">
-      <ion-select-option value="faucet">Leaky Faucet</ion-select-option>
-      <ion-select-option value="toilet">Clogged Toilet</ion-select-option>
-      <ion-select-option value="ceiling">Cracks in Ceilings</ion-select-option>
-      <ion-select-option value="outlet">Faulty Outlets</ion-select-option>
-      <ion-select-option value="Other">Other</ion-select-option>
-    </ion-select>
-  </section>
 
-  <ion-button class="maintenanceRequest__submit-btn" expand="block">Submit</ion-button>
+    <h5>Maintenance</h5>
+
+        <ion-select label="Maintenance Request" placeholder="Faucet">
+          <ion-select-option value="faucet">Leaky Faucet</ion-select-option>
+          <ion-select-option value="toilet">Clogged Toilet</ion-select-option>
+          <ion-select-option value="ceiling">Cracks in Ceilings</ion-select-option>
+          <ion-select-option value="outlet">Faulty Outlets</ion-select-option>
+          <ion-select-option value="Other">Other</ion-select-option>
+        </ion-select>
+
+
+    <ion-input aria-label="Custom input" placeholder="Type Something..." class="custom"></ion-input>
+
+    <div class="submit">
+      <ion-button>Submit</ion-button>
+    </div>
+  </form>
+
 </ion-content>

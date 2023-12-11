@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService, MaintenanceReq } from 'src/app/services/data.service';
 import { AlertController } from '@ionic/angular';
 
+
+
 @Component({
   selector: 'app-request',
   templateUrl: './request.page.html',
@@ -58,3 +60,5 @@ export class RequestPage implements OnInit {
     this.dataService.updateMaintenanceReq(maintenanceReq);
   }
 }
+
+
