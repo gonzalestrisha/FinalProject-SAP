@@ -1,7 +1,6 @@
 ion-header {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    
+    margin-top: 20px;    
   }
   
   ion-toolbar {
@@ -9,102 +8,111 @@ ion-header {
     margin: 0 auto;
     max-width: 100%;
   }
-  
-  ion-list {
-    border: 1px solid #891E89;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 0 auto;
-    max-width: 70%;
-    margin-top: 10px;
-  }
-  
-  ion-select {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px 10px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  ion-input.custom {
-    background: transparent;
-    border: 2px solid #891E89;
-    color: black;
-    --placeholder-color: #dddddd9f;
-    --placeholder-opacity: 0.8;
-  
-    padding: 10px;
-    margin: 0 auto;
-    max-width: 70%;
-    margin-top: 15px;
-    /* Added height property */
-    height: 30%; /* Adjust height as needed */
-  }
-  ion-input.custom::placeholder {
-    /* Adjust style properties */
-    color: #891E89; /* Change placeholder color */
-    font-weight: bold; /* Increase font weight */
-    font-size: 14px; /* Increase font size */
-    text-align: center; /* Center align text */
-    opacity: 0.8; /* Adjust opacity level */
-  }
-  
-  
-  .submit {
-    margin-top: 40px;
+
+  .maintenanceRequest__title{
+    display: block;
+    color: #891E89;
+    font-weight: 500;
+    font-size: 1.5rem;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+  }
+
+  .maintenanceRequest__selectSection{
+    display: block;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .maintenanceRequest__selectfield{
+    width: auto;
+    border: 1px solid #891E89;
+    padding: 0.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
   }
   
-  @media (max-width: 768px) {
-    ion-toolbar {
-      padding: 5px;
-      /* Decrease width */
-      max-width: 100%;
-    }
+  // ion-input .custom {
+  //   background: transparent;
+  //   border: 2px solid #891E89;
+  //   color: black;
+  //   --placeholder-color: #dddddd9f;
+  //   --placeholder-opacity: 0.8;
   
-    ion-list {
-      padding: 10px;
-      /* Decrease width */
-      max-width: 80%;
-    }
+  //   padding: 10px;
+  //   margin: 0 auto;
+  //   max-width: 70%;
+  //   margin-top: 15px;
+  //   /* Added height property */
+  //   height: 30%; /* Adjust height as needed */
+  // }
+  // ion-input.custom::placeholder {
+  //   /* Adjust style properties */
+  //   color: #891E89; /* Change placeholder color */
+  //   font-weight: bold; /* Increase font weight */
+  //   font-size: 14px; /* Increase font size */
+  //   text-align: center; /* Center align text */
+  //   opacity: 0.8; /* Adjust opacity level */
+  // }
   
-    ion-select {
-      width: 80%;
-    }
   
-    ion-input.custom {
-      padding: 3px;
-      max-width: 80%;
-      height: 30%; /* Adjust height for smaller screens */
-    }
+  .maintenanceRequest__submit-btn {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    display: block;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
   }
   
-  @media (max-width: 576px) {
-    ion-toolbar {
-      padding: 3px;
-      /* Decrease width */
-      max-width: 100%;
-    }
+  // @media (max-width: 768px) {
+  //   ion-toolbar {
+  //     padding: 5px;
+  //     /* Decrease width */
+  //     max-width: 100%;
+  //   }
   
-    ion-list {
-      margin-top: 10px;
-      padding: 5px;
-      /* Decrease width */
-      max-width: 90%;
-    }
+  //   ion-list {
+  //     padding: 10px;
+  //     /* Decrease width */
+  //     max-width: 80%;
+  //   }
   
-    ion-select {
-      width: 60%;
-    }
+  //   ion-select {
+  //     width: 80%;
+  //   }
   
-    ion-input.custom {
-      padding: 3px;
-      max-width: 90%;
-      height: 30%; /* Adjust height for smaller screens */
-    }
-  }
+  //   ion-input.custom {
+  //     padding: 3px;
+  //     max-width: 80%;
+  //     height: 30%; /* Adjust height for smaller screens */
+  //   }
+  // }
+  
+  // @media (max-width: 576px) {
+  //   ion-toolbar {
+  //     padding: 3px;
+  //     /* Decrease width */
+  //     max-width: 100%;
+  //   }
+  
+  //   ion-list {
+  //     margin-top: 10px;
+  //     padding: 5px;
+  //     /* Decrease width */
+  //     max-width: 90%;
+  //   }
+  
+  //   ion-select {
+  //     width: 60%;
+  //   }
+  
+  //   ion-input.custom {
+  //     padding: 3px;
+  //     max-width: 90%;
+  //     height: 30%; /* Adjust height for smaller screens */
+  //   }
+  // }
   
