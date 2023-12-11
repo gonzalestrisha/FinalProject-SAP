@@ -1,67 +1,29 @@
-<script> src="main.js"</script>
 <ion-content>
   <ion-text class="header">REQUESTS</ion-text>
 
 
-  <div class="cards">
-   <ion-card>
-     <ion-card-header>
+  <div class="cards"  *ngFor="let req of maintenanceReqs">
+    <ion-card [ngClass]="(!req.pending)?'request__done':''">
+      <ion-card-header>
+        <ion-card-title>{{ req.type }}</ion-card-title>
+        <ion-card-subtitle> Unit Number: {{ req.unitNumber }} </ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-label> 
+          <ion-icon name="triangle" *ngIf="req.pending" color="warning"></ion-icon>
+          <ion-icon name="checkmark-circle" *ngIf="!req.pending" color="success"></ion-icon>
+          {{ req.dateOfRequest }} 
 
-     </ion-card-header>
-   </ion-card>
-
-
-   <ion-card>
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-
-
-   <ion-card >
-     <ion-card-header>
-
-     </ion-card-header>
-   </ion-card>
-
-
-
-
- </div>
+          <div class="request__btns">
+            <ion-button fill="clear" (click)="updateRequest(req)" *ngIf="req.pending">Done</ion-button>
+            <ion-button fill="clear" (click)="updateRequest(req)" *ngIf="!req.pending">Undo</ion-button>
+            <ion-button fill="clear" (click)="deleteRequest(req)">Delete</ion-button>
+          </div>
+        </ion-label>
+      </ion-card-content>
+    </ion-card>
+  </div>
  
 
  </ion-content>

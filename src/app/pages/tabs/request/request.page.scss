@@ -19,6 +19,14 @@
     margin-bottom: 30px;
     height: 150px;
   }
+
+  .request__btns {
+    float: right;
+  }
+
+  .request__done {
+    opacity: 0.5;
+  }
   
   
   @media (min-width: 968px) {

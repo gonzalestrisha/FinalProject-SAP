@@ -63,10 +63,11 @@ export class DataService {
     const maintenanceReqRef = doc(this.firestore, `maintenanceReq/${maintenanceReq.id}`);
     return updateDoc(maintenanceReqRef, 
       {
-        unitNumber: maintenanceReq.unitNumber, 
+        unitNumber: maintenanceReq.unitNumber,
         dateOfRequest: maintenanceReq.dateOfRequest,
         type: maintenanceReq.type,
         pending: maintenanceReq.pending
-      });
+      }
+    );
   }
 }
