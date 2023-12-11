@@ -12,9 +12,7 @@ export interface MaintenanceReq {
   message: string;
   dateOfRequest: string;
   pending: boolean;
-  
 }
-
 
 export interface units {
   id?: string;
@@ -29,9 +27,6 @@ export interface payments {
   numOfUnits: number;
   rentAmountPerUnit: number;
 }
-
-
-
 
 /*meron na to */
 export interface Transaction {
@@ -86,11 +81,6 @@ export class DataService {
     );
   }
 
-
-
-
-
-
   getTransactions(): Observable<Transaction[]> {
     const transactionsRef = collection(this.firestore, 'transactions');
     return collectionData(transactionsRef, { idField: 'id' }) as Observable<Transaction[]>;
@@ -110,7 +100,5 @@ export class DataService {
     const transactionRef = doc(this.firestore, `transactions/${transaction.id}`);
     return deleteDoc(transactionRef);
   }
-
-
 }
 

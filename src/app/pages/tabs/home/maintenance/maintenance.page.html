@@ -12,30 +12,30 @@
   <form>
     <h5>Unit</h5>
 
-    <ion-select label="Select unit" placeholder="Unit">
-      <ion-select-option value="unit1">unit 1</ion-select-option>
-      <ion-select-option value="unit2">unit 2</ion-select-option>
-      <ion-select-option value="unit3">unit 3</ion-select-option>
-      <ion-select-option value="unit4">unit 4</ion-select-option>
-      <ion-select-option value="unit5">unit 5</ion-select-option>
-      <ion-select-option value="unit6">unit 6</ion-select-option>
+    <ion-select label="Select Unit" placeholder="Unit" [(ngModel)]="unitNumber">
+      <ion-select-option [value]=1>Unit 1</ion-select-option>
+      <ion-select-option [value]=2>Unit 2</ion-select-option>
+      <ion-select-option [value]=3>Unit 3</ion-select-option>
+      <ion-select-option [value]=4>Unit 4</ion-select-option>
+      <ion-select-option [value]=5>Unit 5</ion-select-option>
+      <ion-select-option [value]=6>Unit 6</ion-select-option>
     </ion-select>
 
     <h5>Maintenance</h5>
 
-        <ion-select label="Maintenance Request" placeholder="Faucet">
-          <ion-select-option value="faucet">Leaky Faucet</ion-select-option>
-          <ion-select-option value="toilet">Clogged Toilet</ion-select-option>
-          <ion-select-option value="ceiling">Cracks in Ceilings</ion-select-option>
-          <ion-select-option value="outlet">Faulty Outlets</ion-select-option>
+        <ion-select label="Maintenance Request" placeholder="Faucet" [(ngModel)]="type" >
+          <ion-select-option value="Leaky Faucet">Leaky Faucet</ion-select-option>
+          <ion-select-option value="Clogged Toilet">Clogged Toilet</ion-select-option>
+          <ion-select-option value="Cracks in Ceilings">Cracks in Ceilings</ion-select-option>
+          <ion-select-option value="Faulty Outlets">Faulty Outlets</ion-select-option>
           <ion-select-option value="Other">Other</ion-select-option>
         </ion-select>
 
 
-    <ion-input aria-label="Custom input" placeholder="Type Something..." class="custom"></ion-input>
+    <ion-textarea [(ngModel)]="message" aria-label="Custom input" placeholder="Type Something..." class="custom"></ion-textarea>
 
     <div class="submit">
-      <ion-button>Submit</ion-button>
+      <ion-button (click)="addRequest()" [disabled]="!(unitNumber && type && message)">Submit</ion-button>
     </div>
   </form>
 
