@@ -4,14 +4,14 @@
 <div class="body">
   <ion-card id="amount">
     <section class="text-income">
-      <ion-card-header>Income </ion-card-header>
+      <ion-card-header>Income</ion-card-header>
       <ion-card-header ></ion-card-header>
 
     </section>
   </ion-card>
 
   <ion-card>
-    <ion-card-header class="text-income">Pending Requests</ion-card-header>
+    <ion-card-header class="card-title">Pending Requests</ion-card-header>
     <ion-card-header class="number">
       {{ pendingRequestsCount$ | async }}
     </ion-card-header>
@@ -22,7 +22,11 @@
 
   <ion-card>
     <ion-card-header class="card-title">Units</ion-card-header>
-    <ion-card-header class="number">10</ion-card-header>
+    <ion-card-header class="number">6</ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header class="card-title">Tenants</ion-card-header>
+    <ion-card-header class="number">24</ion-card-header>
   </ion-card>
 
 </div>
