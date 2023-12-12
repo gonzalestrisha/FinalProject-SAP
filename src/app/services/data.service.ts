@@ -30,11 +30,11 @@ export interface payments {
 
 
 export interface Transaction {
+paymentDate: any;
   id?: string;
   unitNumber: number;
   billType: 'water' | 'rent' | 'current';
   paymentAmount: number;
-  paymentDate: string;
 }
 
 
@@ -44,6 +44,38 @@ export interface Transaction {
 export class DataService {
 
   constructor(private firestore: Firestore) {}
+
+  getPayment(): Observable<payments[]> {
+    const paymentsRef = collection(this.firestore, 'payments');
+    return collectionData(paymentsRef, { idField: 'id'}) as Observable<payments[]>;
+  }
+
+  getPaymentById(id: string): Observable<payments> {
+    const paymentsRef = doc(this.firestore, 'payments/${id}');
+    return docData(paymentsRef, { idField: 'id' }) as Observable<payments>;
+  }
+
+  addPayment(payment:payments) {
+    const paymentsRef = collection(this.firestore, 'payments');
+    return addDoc(paymentsRef, payment);
+  }
+
+  deletePayment(payment:payments) {
+    const paymentsRef = doc(this.firestore, `payment/${payment.id}`);
+    return deleteDoc(paymentsRef);
+  }
+
+  updatePayment(payment:payments) {
+    const paymentsRef = doc(this.firestore, `payment/${payment.id}`);
+    return updateDoc(paymentsRef, 
+      { 
+        dueDayPerMonth: payment.dueDayPerMonth,
+        numOfUnits: payment.numOfUnits,
+        rentAmountPerUnit: payment.rentAmountPerUnit,
+      }
+    );
+  }
+
 
   getMaintenanceReqs(): Observable<MaintenanceReq[]> {
     const maintenanceReqRef = collection(this.firestore, 'maintenanceReq');

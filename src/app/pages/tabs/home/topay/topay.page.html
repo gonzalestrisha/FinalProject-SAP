@@ -1,47 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button default-href="#"></ion-back-button>
-    </ion-buttons>
-      <ion-title>Payment</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="#"></ion-back-button>
+      </ion-buttons>
+        <ion-title>Payment</ion-title>
   </ion-toolbar>
-</ion-header>
-
-<ion-content>
+  </ion-header>
+  
+  <ion-content>
   <form>
   <h5>Unit</h5>
-
-    <ion-select label="Select unit"  name="unit" id="unit" placeholder="Unit">
-      <ion-select-option value="unit1">unit 1</ion-select-option>
-      <ion-select-option value="unit2">unit 2</ion-select-option>
-      <ion-select-option value="unit3">unit 3</ion-select-option>
-      <ion-select-option value="unit4">unit 4</ion-select-option>
-      <ion-select-option value="unit5">unit 5</ion-select-option>
-      <ion-select-option value="unit6">unit 6</ion-select-option>
-    </ion-select>
-
+  
+      <ion-select label="Select unit" name="unit" id="unit" placeholder="Unit" [(ngModel)]="unitNumber" (ionChange)="updateUnitNumber()">
+        <ion-select-option value="unit1">unit 1</ion-select-option>
+        <ion-select-option value="unit2">unit 2</ion-select-option>
+        <ion-select-option value="unit3">unit 3</ion-select-option>
+        <ion-select-option value="unit4">unit 4</ion-select-option>
+        <ion-select-option value="unit5">unit 5</ion-select-option>
+        <ion-select-option value="unit6">unit 6</ion-select-option>
+      </ion-select>
+  
   <h5>To pay</h5>
-
-      <ion-select label="Select bill" name="bill" id="bill" placeholder="Bill">
-      <ion-select-option value="rent">Rent Bill</ion-select-option>
-      <ion-select-option value="water">Water Bill</ion-select-option>
-      <ion-select-option value="electric">Electric Bill</ion-select-option>
-    </ion-select>
-
-
+  
+        <ion-select label="Select bill" name="bill" id="bill" placeholder="Bill" [(ngModel)]="billType" (ionChange)="updateBillType()">
+        <ion-select-option value="rent">Rent Bill</ion-select-option>
+        <ion-select-option value="water">Water Bill</ion-select-option>
+        <ion-select-option value="electric">Electric Bill</ion-select-option>
+      </ion-select>
+  
+  
   <h5>Payment Amount</h5>
-  <input type="number" name="number"   id="amount" class="rounded-input">
+  <input type="number" name="number"   id="amount" class="rounded-input" [(ngModel)]="paymentAmount">
   <br/>
-
-  <h5>Amount Date</h5>
-  <input type="date"  name="date"  id="date" class="rounded-input">
+  
+  <h5>Payment Date</h5>
+  <input type="date" name="date" id="date" class="rounded-input" [(ngModel)]="paymentDate">
   <br/>
-
-  <div class="submit" name="submit" id="submit">
-    <ion-button onclick="submitForm()">Submit</ion-button>
+  
+  <div class="submit">
+      <ion-button (click)="submit()" [disabled]="!unitNumber || !billType || !paymentAmount || !paymentDate">Submit</ion-button>
   </div>
-
-</form>
-
-
-</ion-content>
+  
+  </form>
+  
+  
+  </ion-content>
