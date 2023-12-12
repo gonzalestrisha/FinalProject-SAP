@@ -33,7 +33,7 @@ export interface Transaction {
 paymentDate: any;
   id?: string;
   unitNumber: number;
-  billType: 'water' | 'rent' | 'current';
+  billType: string;
   paymentAmount: number;
 }
 
@@ -132,5 +132,13 @@ export class DataService {
     return deleteDoc(transactionsRef);
   }
 
+
+
+  
+
 }
+
+
+
+
 

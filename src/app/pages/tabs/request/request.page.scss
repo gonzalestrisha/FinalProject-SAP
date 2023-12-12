@@ -1,7 +1,6 @@
 .full{
   overflow-y:auto ;
 }
-
 .header {
   display: flex;
   justify-content: center;
@@ -21,8 +20,8 @@ ion-card {
   margin-right: 30px;
   margin-bottom: 15px;
   height: 150px;
-}
 
+}
 
 .request__btns {
   float: right;
@@ -32,11 +31,13 @@ ion-card {
   opacity: 0.5;
 }
 
+ion-content {
+  scroll-behavior: smooth;
+}
 
 
 @media (min-width: 968px) {
-  .header {
-    display: flex;
+  .header { display: flex;
     justify-content: center;
     margin-top: 65px;
     font-size: 40px;
@@ -50,4 +51,3 @@ ion-card {
     height: 150px;
   }
 }
-

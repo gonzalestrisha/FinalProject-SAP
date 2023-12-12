@@ -16,11 +16,13 @@ ion-card-header {
   font-weight: 700;
   padding-bottom: 0.2rem;
 }
+
 ion-label {
   font-size: 1rem;
   padding: 5px 16px;
   margin-left: 1.5rem;
 }
+
 .text-income {
   display: inline-block;
   width: 50%;
@@ -41,6 +43,7 @@ ion-label {
   font-family: sans-serif;
   float: right;
 }
+
 .pie:before {
   content: "";
   position: absolute;
@@ -66,4 +69,3 @@ ion-label {
   padding-top: 1rem;
   color: #891E89;
 }
-

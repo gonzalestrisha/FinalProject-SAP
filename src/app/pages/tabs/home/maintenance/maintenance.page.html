@@ -1,10 +1,10 @@
 
-<ion-header [translucent]="true">
+<ion-header >
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
     </ion-buttons>
-    <ion-title>Maintenance Request</ion-title>
+    <ion-title>MAINTENANCE REQUEST</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -24,7 +24,7 @@
 
     <h5>Maintenance</h5>
 
-        <ion-select label="Maintenance Request" placeholder="Faucet" [(ngModel)]="type" >
+        <ion-select label="Maintenance Request" placeholder="Faucet" [(ngModel)]="type">
           <ion-select-option value="Leaky Faucet">Leaky Faucet</ion-select-option>
           <ion-select-option value="Clogged Toilet">Clogged Toilet</ion-select-option>
           <ion-select-option value="Cracks in Ceilings">Cracks in Ceilings</ion-select-option>
@@ -34,7 +34,6 @@
 
 
     <ion-textarea [(ngModel)]="message" aria-label="Custom input" placeholder="Type Something..." class="custom"></ion-textarea>
-
     <div class="submit">
       <ion-button (click)="addRequest()" [disabled]="!(unitNumber && type && message)">Submit</ion-button>
     </div>
