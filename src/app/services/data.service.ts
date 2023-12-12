@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, docData, updateDoc } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, docData, updateDoc, where, query, getDocs } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 
@@ -110,7 +110,16 @@ export class DataService {
     );
   }
 
+  async getPendingRequestsCount(): Promise<number> {
+    const maintenanceReqRef = collection(this.firestore, 'maintenanceReq');
+    const q = query(maintenanceReqRef, where('pending', '==', true));
 
+    const querySnapshot = await getDocs(q);
+    return querySnapshot.size;
+  }
+
+  
+  // transactions
 
   getTransactions(): Observable<Transaction[]> {
     const transactionsRef = collection(this.firestore, 'transactions');
@@ -131,6 +140,8 @@ export class DataService {
     const transactionsRef = doc(this.firestore, `transactions/${transactions.id}`);
     return deleteDoc(transactionsRef);
   }
+
+  
 
 
 
