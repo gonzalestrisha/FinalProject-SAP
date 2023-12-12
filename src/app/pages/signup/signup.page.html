@@ -1,5 +1,5 @@
 <ion-content [fullscreen]="true">
-  <div class="flex-center">
+  <div class="card-center">
     <ion-card class="card">
       <ion-item lines="none">
 				<img id="logo" src="../../../assets/icon/SAP-logo.png" alt="SAP-logo.png">
@@ -9,27 +9,25 @@
 			</ion-card-header>
 
       <ion-card-content>
-        <ion-item lines="none">
+        <ion-item>
           <ion-input  
           label="First name"
           label-placement="floating" 
-          fill="outline"
+          fill="solid"
           placeholder="Enter first name" 
           color="primary" 
-          [clearInput]="true" 
-          required>
+          [clearInput]="true">
           </ion-input>
         </ion-item>
 
-        <ion-item lines="none">
+        <ion-item>
           <ion-input 
           label="Last name" 
           label-placement="floating" 
           fill="outline" 
           placeholder="Enter last name" 
           color="primary" 
-          [clearInput]="true"
-          required>
+          [clearInput]="true">
           </ion-input>
         </ion-item>
         
@@ -46,12 +44,11 @@
           successText="Valid email."
           [clearInput]="true" 
           ngModel
-          email
-          required>
+          email>
           </ion-input>
         </ion-item>
         
-        <ion-item lines="none">
+        <ion-item>
           <ion-input 
           label="Mobile number" 
           label-placement="floating" 
@@ -59,25 +56,22 @@
           color="primary" 
           type="tel"
           placeholder="Enter mobile number" 
-
-          [clearInput]="true" 
-          required>
+          [clearInput]="true" >
           </ion-input>
         </ion-item>
         
-        <ion-item lines="none">
+        <ion-item>
           <ion-input 
           label="Username" 
           label-placement="floating" 
           fill="outline" 
           placeholder="Enter username" 
           color="primary" 
-          [clearInput]="true" 
-          required>
+          [clearInput]="true">
           </ion-input>
         </ion-item>
         
-        <ion-item lines="none">
+        <ion-item>
           <ion-input 
           label="Password"
           label-placement="floating" 
@@ -85,12 +79,11 @@
           placeholder="Enter Password" 
           color="primary" 
           type="password" 
-          [clearInput]="true" 
-          required>
+          [clearInput]="true">
           </ion-input>
         </ion-item>
         
-        <ion-item lines="none">
+        <ion-item>
           <ion-input 
           label="Confirm Password" 
           label-placement="floating" 
@@ -103,16 +96,18 @@
           </ion-input>
         </ion-item>
         
-        <ion-button shape="round" fill="solid" size="full" id="button">
+        <ion-button fill="solid" expand="block" id="button">
           Sign Up
         </ion-button>
       </ion-card-content>
 
-      <ion-item lines="none">
-        <ion-text>
-          I already have an account. 
-        </ion-text>
-        <a href="login">Login</a>
+      <ion-item class="align-label"  lines="none">
+
+        <ion-label>I already have an account. 
+          <a href="login" class="addSpace"> Login. </a>
+        </ion-label>
+
+
       </ion-item>
 
 
