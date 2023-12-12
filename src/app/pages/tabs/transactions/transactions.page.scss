@@ -1,5 +1,6 @@
 .full{
   overflow-y: auto;
+
 }
 
 .header {
@@ -20,12 +21,22 @@
 ion-card {
   margin-left: 30px;
   margin-right: 30px;
-  margin-bottom: 30px;
-  height: 150px;
+  margin-bottom: 20px;
+  height: fit-content;
+}
+ion-card-content {
+  padding-bottom: 0;
 }
 
+
 .transaction__btns {
+  // position: relative;
   float: right;
+  height: 4rem;
+}
+ion-button {
+  height: fit-content;
+  padding-bottom: 0;
 }
 
 

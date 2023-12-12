@@ -33,10 +33,12 @@ export class TopayPage implements OnInit{
       this.billType = '';
       this.paymentAmount = 0;
       this.paymentDate = 0;
+      
   
       const toast = await this.toastController.create({
         message: 'Transaction added',
-        duration: 2000
+        duration: 3000,
+        
       })
   
       toast.present();
