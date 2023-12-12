@@ -1,6 +1,7 @@
 ion-content{
   overflow-y: auto;
-  background: url('../../../../assets/img/bg/Vectorlogin.svg');
+  background: url('../../../../assets/img/bg/Vectoraccount.svg');
+  background-size: cover;
  }
 
 ion-card {
@@ -27,6 +28,15 @@ ion-card {
     margin: auto;
     color: #9f597a;
   }
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 65px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #891E89;
+}
   
 .seeMore {  
   width: 30%;
@@ -41,6 +51,7 @@ ion-card {
 
 .rules{
   overflow-y: scroll;
+
 }
 
   .maintenanceReq, .topay {
@@ -82,6 +93,12 @@ ion-card {
     height: 50px;
     color: #600060;
   
+  }
+
+  p, h4 {
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 7%;
   }
 
 

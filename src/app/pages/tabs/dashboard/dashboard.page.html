@@ -1,33 +1,34 @@
 <div class="full">
   <ion-text class="header">DASHBOARD</ion-text>
 
-<div class="body">
-  <ion-card id="amount">
-    <section class="text-income">
-      <ion-card-header>Income</ion-card-header>
-      <ion-card-header ></ion-card-header>
+  <div class="body">
+    <ion-card id="amount">
+      <section class="card-title">
+        <ion-card-header>Income</ion-card-header>
+        <ion-card-header></ion-card-header>
 
-    </section>
-  </ion-card>
+      </section>
+    </ion-card>
 
-  <ion-card>
-    <ion-card-header class="card-title">Pending Requests</ion-card-header>
-    <ion-card-header class="number">
-      {{ pendingRequestsCount$ | async }}
-    </ion-card-header>
-    <!-- <ion-card-content class="pie" style="--p:60;--b:17px;--c:#891E89;">
-    </ion-card-content> -->
-    
-  </ion-card>
+    <ion-card>
+      <ion-card-header class="card-title">Pending Requests</ion-card-header>
+      <ion-card-header class="number">
+        {{ pendingRequestsCount$ | async }}
+      </ion-card-header>
+      <!-- <ion-card-content class="pie" style="--p:60;--b:17px;--c:#891E89;">
+      </ion-card-content> -->
+      
+    </ion-card>
 
-  <ion-card>
-    <ion-card-header class="card-title">Units</ion-card-header>
-    <ion-card-header class="number">6</ion-card-header>
-  </ion-card>
-  <ion-card>
-    <ion-card-header class="card-title">Tenants</ion-card-header>
-    <ion-card-header class="number">24</ion-card-header>
-  </ion-card>
+    <ion-card>
+      <ion-card-header class="card-title">Occupied Units</ion-card-header>
+      <ion-card-header class="number">6</ion-card-header>
+    </ion-card>
 
-</div>
+    <ion-card>
+      <ion-card-header class="card-title">Total Tenants</ion-card-header>
+      <ion-card-header class="number">24</ion-card-header>
+    </ion-card>
+
+  </div>
 </div>
