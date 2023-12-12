@@ -55,7 +55,20 @@ ion-card-title {
   text-align: center;
   margin-top: 0.5rem;
   color: gray;
+  font-size: 1.1rem; /* Adjust the font size */
+  line-height: 1.5rem; /* Adjust the line height */
 }
+ion-label {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+ }
+ 
+ ion-input {
+  margin-left: 0.5rem;
+  width: 80%;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+ }
   
 a {
     text-decoration: none;
