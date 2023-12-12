@@ -1,3 +1,4 @@
+
 .header {
     display: flex;
     justify-content: center;
@@ -20,6 +21,7 @@
   
   ion-content {
     --background: #F5F5F5;
+    overflow-y: scroll;
   }
   
   section {
@@ -28,6 +30,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 70%;
+    
   }
   
   ion-select,
@@ -42,8 +45,18 @@
     color: gray;
   }
   
+  ion-datetime {
+    margin: auto;
+    display: block;
+    margin-bottom: 0px;
+  }
+
+  div.datetime-buttons {
+    padding: 3px;
+  }
+
   .submit {
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
   }
   

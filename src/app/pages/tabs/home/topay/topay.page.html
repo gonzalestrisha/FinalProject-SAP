@@ -24,19 +24,23 @@
   <h5>To pay</h5>
   
       <ion-select label="Select bill" placeholder="Bill" [(ngModel)]="billType">
-        <ion-select-option value="rent">Rent Bill</ion-select-option>
-        <ion-select-option value="water">Water Bill</ion-select-option>
-        <ion-select-option value="electric">Electric Bill</ion-select-option>
+        <ion-select-option value="Rent">Rent Bill</ion-select-option>
+        <ion-select-option value="Water">Water Bill</ion-select-option>
+        <ion-select-option value="Electric">Electric Bill</ion-select-option>
       </ion-select>
   
   
   <h5>Payment Amount</h5>
-  <input type="number" class="rounded-input" [(ngModel)]="paymentAmount">
+  <input type="number" class="rounded-input" [(ngModel)]="paymentAmount" placeholder="Input Amount">
   <br/>
   
   <h5>Payment Date</h5>
-  <input type="date"  class="rounded-input" [(ngModel)]="paymentDate">
-  <br/>
+  <!-- <input class="rounded-input" placeholder="Input Date" [(ngModel)]="paymentDate"> -->
+  
+<br/>
+  <ion-datetime [(ngModel)]="paymentDate" type="date-time" showClearButton="true" showDefaultButtons="true" displayFormat="">
+  </ion-datetime>
+  
   
   <div class="submit">
       <ion-button (click)="submit()" [disabled]="!(unitNumber && billType && paymentAmount && paymentDate)">Submit</ion-button>

@@ -3,27 +3,28 @@
 
 
 
-<div class="cards"  *ngFor="let trans of transactions">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{ trans.billType }} Bill</ion-card-title>
-      <ion-card-subtitle> Unit Number: {{ trans.unitNumber }} </ion-card-subtitle>
+  <div class="cards"  *ngFor="let trans of transactions">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ trans.billType }} Bill</ion-card-title>
+        <ion-card-subtitle> Unit Number: {{ trans.unitNumber }} </ion-card-subtitle>
+        
+      </ion-card-header>
       
-    </ion-card-header>
-    
-    <ion-card-content>
-      <ion-label>Payment Amount: </ion-label>  {{ trans.paymentAmount }} <br>
+      <ion-card-content>
+        <ion-label>Payment Amount: </ion-label>  {{ trans.paymentAmount }} <br>
 
-        <ion-label>Payment Date: {{trans.paymentDate}}
-      </ion-label>
+          <ion-label>Payment Date: {{trans.paymentDate}}
+        </ion-label>
 
-  <div class="transaction__btns">
-        <ion-button fill="clear" (click)="deleteTransaction(trans)">Delete</ion-button> <br>
-      </div>
- 
+        <div class="transaction__btns">
+          <ion-button fill="clear" expand="block" (click)="deleteTransaction(trans)">Delete</ion-button> <br>
+        </div>
 
-    </ion-card-content>
-  </ion-card>
-</div>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
 </div>
 
