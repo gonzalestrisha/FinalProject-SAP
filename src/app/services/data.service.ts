@@ -124,17 +124,10 @@ export class DataService {
 
    async getTotalIncome(): Promise<number> {
     const transactionsRef = collection(this.firestore, 'transactions');
-    const q = query(transactionsRef, where('paymentAmount', '>', 0 ));
-    const querySnapshot = await getDocs(q);
-
-    const totalIncome = querySnapshot.docs.reduce((acc, doc) => {
-      const amount = doc.data()['amount'];
-      return typeof amount === 'number' ? acc + amount : acc;
-    }, 0);
-    
-    
-
-    return totalIncome;
+    const income = await getAggregateFromServer(transactionsRef, {
+      totalIncome: sum('paymentAmount')
+    });
+    return income.data().totalIncome;
   }
 
     // transactions
