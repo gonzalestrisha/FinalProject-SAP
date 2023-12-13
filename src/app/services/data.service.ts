@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, docData, updateDoc, query, where, getDocs } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, docData, updateDoc, query, where, getDocs, getAggregateFromServer, AggregateField, AggregateQuerySnapshot, } from '@angular/fire/firestore';
 import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { sum } from 'firebase/firestore';
 
 export interface MaintenanceReq {
   id?: string;
@@ -121,12 +122,20 @@ export class DataService {
     return querySnapshot.size;
   }
 
-  //  getTotalIncome(): Observable<number> {
-  // const paymentsRef = collection(this.firestore, 'payments');
-  // return collectionData(paymentsRef, {idField: 'id'}).pipe(
-  // map((payments: Payment[]) => payments.reduce((acc, payment) => acc + payment.amount, 0))
-  // );
-  // }
+   async getTotalIncome(): Promise<number> {
+    const transactionsRef = collection(this.firestore, 'transactions');
+    const q = query(transactionsRef, where('paymentAmount', '>', 0 ));
+    const querySnapshot = await getDocs(q);
+
+    const totalIncome = querySnapshot.docs.reduce((acc, doc) => {
+      const amount = doc.data()['amount'];
+      return typeof amount === 'number' ? acc + amount : acc;
+    }, 0);
+    
+    
+
+    return totalIncome;
+  }
 
     // transactions
 

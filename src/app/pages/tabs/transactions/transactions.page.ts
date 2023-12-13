@@ -5,8 +5,8 @@ import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-transactions',
-  templateUrl: './transactions.page.html',
-  styleUrls: ['./transactions.page.scss'],
+  templateUrl: 'transactions.page.html',
+  styleUrls: ['transactions.page.scss'],
 })
 export class TransactionsPage implements OnInit {
  transactions: Transaction[] = [];
