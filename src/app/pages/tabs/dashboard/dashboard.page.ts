@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
-import { ChangeDetectorRef } from '@angular/core';
-import { Observable, interval } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,14 +8,16 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-  pendingRequestsCount$!: Observable<number>;
+  totalIncome$!: Observable<number>;
+  totalPendingRequests!: number;
 
-  constructor(private dataService: DataService, private cdr: ChangeDetectorRef) {}
+  constructor(private dataService: DataService) {
+    this.dataService.countPendingRequests().subscribe(count => {
+      this.totalPendingRequests = count;
+    });
 
-  ngOnInit() {
-    this.pendingRequestsCount$ = interval(5000).pipe(
-      switchMap(() => this.dataService.getPendingRequestsCount())
-    );
-  }
-
+    this.totalIncome$ = this.dataService.getTotalIncome();
+  }    
+    ngOnInit() {
+    }
 }
