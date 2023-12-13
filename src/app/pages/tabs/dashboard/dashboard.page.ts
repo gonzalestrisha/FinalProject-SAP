@@ -14,7 +14,7 @@ export class DashboardPage implements OnInit {
   pendingRequestsCount$!: Observable<number>;
 
   constructor(private dataService: DataService, private cdr: ChangeDetectorRef) {
-    this.totalIncome$ = this.dataService.getTotalIncome();
+    // this.totalIncome$ = this.dataService.getTotalIncome();
   }    
   
   ngOnInit() {

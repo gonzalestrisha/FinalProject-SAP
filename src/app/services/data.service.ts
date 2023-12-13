@@ -7,6 +7,7 @@ export interface MaintenanceReq {
   id?: string;
   unitNumber: number;
   dateOfRequest: string;
+  message: string;
   type: string;
   pending: boolean;
 }
@@ -35,11 +36,11 @@ export interface payments {
 
 export interface Transaction {
   id?: string;
-  unit: number;
-  type: string;
-  paidMonth: string;
-  amount: number;
-  dateOfPayment: string;
+  unitNumber: number;
+  billType: string;
+  // paidMonth: string;
+  paymentAmount: number;
+  paymentDate: number;
 }
 
 @Injectable({
@@ -48,7 +49,7 @@ export interface Transaction {
 export class DataService {
 
   constructor(private firestore: Firestore) {}
-  
+
   getPayment(): Observable<payments[]> {
     const paymentsRef = collection(this.firestore, 'payments');
     return collectionData(paymentsRef, { idField: 'id'}) as Observable<payments[]>;
@@ -113,18 +114,19 @@ export class DataService {
 
   
   async getPendingRequestsCount(): Promise<number> {
-    const maintenanceReqRef = collection(this.firestore, 'maintenanceReq');
-    const q = query(maintenanceReqRef, where('pending', '==', true));
+  const maintenanceReqRef = collection(this.firestore, 'maintenanceReq');
+  const q = query(maintenanceReqRef, where('pending', '==', true));
 
     const querySnapshot = await getDocs(q);
     return querySnapshot.size;
   }
-   getTotalIncome(): Observable<number> {
-    const paymentsRef = collection(this.firestore, 'payments');
-    return collectionData(paymentsRef, {idField: 'id'}).pipe(
-        map((payments: Payment[]) => payments.reduce((acc, payment) => acc + payment.amount, 0))
-    );
-  }
+
+  //  getTotalIncome(): Observable<number> {
+  // const paymentsRef = collection(this.firestore, 'payments');
+  // return collectionData(paymentsRef, {idField: 'id'}).pipe(
+  // map((payments: Payment[]) => payments.reduce((acc, payment) => acc + payment.amount, 0))
+  // );
+  // }
 
     // transactions
 
