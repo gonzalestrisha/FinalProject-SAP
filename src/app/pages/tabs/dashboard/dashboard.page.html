@@ -1,14 +1,15 @@
 <div class="full">
   <ion-text class="header">DASHBOARD</ion-text>
 
-  <div class="body">
-    <ion-card id="amount">
-      <section class="card-title">
-        <ion-card-header>Income</ion-card-header>
-        <ion-card-header></ion-card-header>
-
-      </section>
-    </ion-card>
+<div class="body">
+  <ion-card id="amount">
+    <section class="text-income">
+      <ion-card-header class="card-title">Income</ion-card-header>
+      <ion-card-header class="number">
+        {{ totalIncome$ | async }}
+      </ion-card-header>
+    </section>
+  </ion-card>
 
     <ion-card>
       <ion-card-header class="card-title">Pending Requests</ion-card-header>

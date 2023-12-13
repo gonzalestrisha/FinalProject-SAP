@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, docData, updateDoc, where, query, getDocs } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, docData, updateDoc, query, where } from '@angular/fire/firestore';
+import { Observable, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
-
-
-/*meron na to */
 export interface MaintenanceReq {
   id?: string;
   unitNumber: number;
-  type: string;
-  message: string;
   dateOfRequest: string;
+  type: string;
   pending: boolean;
 }
 
@@ -20,6 +17,14 @@ export interface units {
   occupied: boolean;
 }
 
+interface Payment{
+  id?: string;
+  unit: number;
+  type: string;
+  paidMonth: string;
+  amount: number;
+  dateOfPayment: string;
+}
 
 export interface payments {
   id?: string;
@@ -28,15 +33,14 @@ export interface payments {
   rentAmountPerUnit: number;
 }
 
-
-export interface Transaction {
-paymentDate: any;
+export interface transactions {
   id?: string;
-  unitNumber: number;
-  billType: string;
-  paymentAmount: number;
+  unit: number;
+  type: string;
+  paidMonth: string;
+  amount: number;
+  dateOfPayment: string;
 }
-
 
 @Injectable({
   providedIn: 'root'
@@ -44,38 +48,6 @@ paymentDate: any;
 export class DataService {
 
   constructor(private firestore: Firestore) {}
-
-  getPayment(): Observable<payments[]> {
-    const paymentsRef = collection(this.firestore, 'payments');
-    return collectionData(paymentsRef, { idField: 'id'}) as Observable<payments[]>;
-  }
-
-  getPaymentById(id: string): Observable<payments> {
-    const paymentsRef = doc(this.firestore, 'payments/${id}');
-    return docData(paymentsRef, { idField: 'id' }) as Observable<payments>;
-  }
-
-  addPayment(payment:payments) {
-    const paymentsRef = collection(this.firestore, 'payments');
-    return addDoc(paymentsRef, payment);
-  }
-
-  deletePayment(payment:payments) {
-    const paymentsRef = doc(this.firestore, `payment/${payment.id}`);
-    return deleteDoc(paymentsRef);
-  }
-
-  updatePayment(payment:payments) {
-    const paymentsRef = doc(this.firestore, `payment/${payment.id}`);
-    return updateDoc(paymentsRef, 
-      { 
-        dueDayPerMonth: payment.dueDayPerMonth,
-        numOfUnits: payment.numOfUnits,
-        rentAmountPerUnit: payment.rentAmountPerUnit,
-      }
-    );
-  }
-
 
   getMaintenanceReqs(): Observable<MaintenanceReq[]> {
     const maintenanceReqRef = collection(this.firestore, 'maintenanceReq');
@@ -101,55 +73,24 @@ export class DataService {
     const maintenanceReqRef = doc(this.firestore, `maintenanceReq/${maintenanceReq.id}`);
     return updateDoc(maintenanceReqRef, 
       {
-        unitNumber: maintenanceReq.unitNumber,
+        unitNumber: maintenanceReq.unitNumber, 
         dateOfRequest: maintenanceReq.dateOfRequest,
         type: maintenanceReq.type,
-        message: maintenanceReq.message,
         pending: maintenanceReq.pending
-      }
-    );
+      });
   }
 
-  async getPendingRequestsCount(): Promise<number> {
+  countPendingRequests(): Observable<number> {
     const maintenanceReqRef = collection(this.firestore, 'maintenanceReq');
-    const q = query(maintenanceReqRef, where('pending', '==', true));
+    return collectionData(maintenanceReqRef, {idField: 'id'}).pipe(
+       map(requests => requests.filter(req => pending).length)
+    );
+   }
 
-    const querySnapshot = await getDocs(q);
-    return querySnapshot.size;
-  }
-
-  
-  // transactions
-
-  getTransactions(): Observable<Transaction[]> {
-    const transactionsRef = collection(this.firestore, 'transactions');
-    return collectionData(transactionsRef, { idField: 'id' }) as Observable<Transaction[]>;
-  }
-
-  getTransactionById(id: string): Observable<Transaction> {
-    const transactionsRef = doc(this.firestore, `transactions/${id}`);
-    return docData(transactionsRef, { idField: 'id' }) as Observable<Transaction>;
-  }
-
-  addTransaction(transactions: Transaction) {
-    const transactionsRef = collection(this.firestore, 'transactions');
-    return addDoc(transactionsRef, transactions);
-  }
-
-  deleteTransaction(transactions: Transaction) {
-    const transactionsRef = doc(this.firestore, `transactions/${transactions.id}`);
-    return deleteDoc(transactionsRef);
-  }
-
-  
-
-
-
-  
-
+   getTotalIncome(): Observable<number> {
+    const paymentsRef = collection(this.firestore, 'payments');
+    return collectionData(paymentsRef, {idField: 'id'}).pipe(
+        map((payments: Payment[]) => payments.reduce((acc, payment) => acc + payment.amount, 0))
+    );
+    }
 }
-
-
-
-
-
